@@ -9,10 +9,10 @@ const indexRouter = require("./routes/index");
 const mongoose = require("mongoose");
 
 mongoose.connect(process.env.DATABASE_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true,
+  useNewUrlParser: process.env.USE_NEW_URL_PARSER,
+  useUnifiedTopology: process.env.USE_UNIFIED_TOPOLOGY,
+  useFindAndModify: process.env.USE_FIND_AND_MODIFY,
+  useCreateIndex: process.env.USE_CREATE_INDEX
 }).then(() => {
     console.log('Database connected!')
 }).catch(err => {
